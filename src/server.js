@@ -15,12 +15,23 @@ app.use(json())
 app.use(urlencoded({ extended: true }))
 app.use(morgan('dev'))
 
-app.get('/data', (req, res) => {
-  res.send({ 'message': 'hello world' })
+// this is custom middleware
+// `next` function will executes the next middleware after this function
+// unless there's an error or a response before the `next` function executed
+const log = (req, res, next) => {
+  console.log('logging')
+  // pass some data from middleware to other controllers
+  req.mydata = 'hello'
+  next()
+}
+
+app.get('/data', log, (req, res) => {
+  res.send({ data: req.mydata })
 })
 
 app.post('/data', (req, res) => {
-  res.send(req.body)
+  console.log(req.body)
+  res.send({ ok: true })
 })
 
 export const start = () => {
