@@ -25,8 +25,13 @@ const log = (req, res, next) => {
   next()
 }
 
-app.get('/data', log, (req, res) => {
-  res.send({ data: req.mydata })
+app.get('/data', (req, res, next) => {
+  // res.send({ data: 1 })
+  next()
+})
+
+app.get('/data', (req, res) => {
+  res.send({ data: 2 })
 })
 
 app.post('/data', (req, res) => {
