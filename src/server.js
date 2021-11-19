@@ -4,6 +4,7 @@ import morgan from 'morgan'
 import cors from 'cors'
 
 export const app = express()
+const router = express.Router()
 
 app.disable('x-powered-by')
 
@@ -18,15 +19,23 @@ app.use(morgan('dev'))
 // this is custom middleware
 // `next` function will executes the next middleware after this function
 // unless there's an error or a response before the `next` function executed
-const log = (req, res, next) => {
-  console.log('logging')
-  // pass some data from middleware to other controllers
-  req.mydata = 'hello'
-  next()
-}
+// const log = (req, res, next) => {
+//   console.log('logging')
+//   // pass some data from middleware to other controllers
+//   req.mydata = 'hello'
+//   next()
+// }
+
+router.get('/me', (req, res) => {
+  res.send({ me: 'hello' })
+})
+
+// the route would be /api/me
+// not only /api or only /me
+app.use('/api', router)
 
 app.get('/data', (req, res, next) => {
-  // res.send({ data: 1 })
+  res.send({ data: 1 })
   next()
 })
 
