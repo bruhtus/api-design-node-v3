@@ -2,25 +2,19 @@ import { Router } from 'express'
 
 const router = Router()
 
+const controller = (req, res) => {
+  res.send({ message: 'hello world' })
+}
+
 router
   .route('/')
-  .get((req, res) => {
-    res.send({ get: true })
-  })
-  .post((req, res) => {
-    res.send({ post: true })
-  })
+  .get(controller)
+  .post(controller)
 
 router
   .route('/:id')
-  .get((req, res) => {
-    res.send({ get: true })
-  })
-  .put((req, res) => {
-    res.send({ put: true })
-  })
-  .delete((req, res) => {
-    res.send({ delete: true })
-  })
+  .get(controller)
+  .put(controller)
+  .delete(controller)
 
 export default router
