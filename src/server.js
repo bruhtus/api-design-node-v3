@@ -4,7 +4,7 @@ import morgan from 'morgan'
 import config from './config'
 import cors from 'cors'
 import { connect } from './utils/db'
-import { router } from './resources/item/item.router'
+import router from './resources/item/item.router'
 
 export const app = express()
 
