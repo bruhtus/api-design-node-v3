@@ -1,5 +1,6 @@
 # Course Code for [API design in Node.js with Express, v3](https://frontendmasters.com/courses/api-design-nodejs-v3/)
-> Scott Moss & Frontend Masters
+> Scott Moss & Frontend Masters<br>
+> The notes in [wiki](https://github.com/bruhtus/api-design-node-v3.wiki.git)
 
 - [Resources](#resources)
 - [Course](#course)
