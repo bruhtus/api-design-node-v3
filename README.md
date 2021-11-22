@@ -30,7 +30,7 @@ The following are suggested to be installed on your machine before beginning the
 ## Course
 This course has two parts, slides and exercises. The slides describe the exerices in detail. Each exercise has a starting branch and solution branch. Example `lesson-1` and `lesson-1-solution`.
 ## Exercises
-** Important: Please check out to each exercise branch as the course progresses. 
+** Important: Please check out to each exercise branch as the course progresses.
 
 ### Hello world Express
 
@@ -60,11 +60,11 @@ This exercise will have you creating routes and sub routers for our soon the be 
 
 In this exercise, you'll be taking what you learned about Mongoose and MongoDb to create a schema and model for the Item resource.
 
-- [ ] create a schema for the item resource
-- [ ] add the correct fields (look at test)
-- [ ] add the correct validations (look at test)
+- [x] create a schema for the item resource
+- [x] add the correct fields (look at test)
+- [x] add the correct validations (look at test)
 - [ ] *extra* add compund index to ensure all tasks in a list have unique names
-- [ ] ensure all tests pass by running test command
+- [x] ensure all tests pass by running test command
 
 ### Controllers
 * branch - `lesson-4`
