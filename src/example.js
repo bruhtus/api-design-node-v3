@@ -11,13 +11,9 @@ const run = async () => {
     list: mongoose.Types.ObjectId(),
   })
 
-  const updated = await Item.findOneAndUpdate(
-    { name: 'clean up' },
-    { name: 'typing' },
-    { new: true }
-  ).exec()
+  const removed = await Item.findByIdAndRemove(item._id).exec()
 
-  console.log(updated)
+  console.log(removed)
 }
 
 run()
