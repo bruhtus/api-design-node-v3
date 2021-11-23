@@ -11,8 +11,8 @@ const run = async () => {
     list: mongoose.Types.ObjectId(),
   })
 
-  const updated = await Item.findByIdAndUpdate(
-    item._id,
+  const updated = await Item.findOneAndUpdate(
+    { name: 'clean up' },
     { name: 'typing' },
     { new: true }
   ).exec()
