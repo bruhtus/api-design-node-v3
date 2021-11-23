@@ -11,7 +11,7 @@ const run = async () => {
     list: mongoose.Types.ObjectId(),
   })
 
-  console.log(await Item.findById(item._id).exec())
+  console.log(await Item.find({}).exec())
 }
 
 run()
