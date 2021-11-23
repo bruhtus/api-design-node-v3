@@ -63,7 +63,7 @@ In this exercise, you'll be taking what you learned about Mongoose and MongoDb t
 - [x] create a schema for the item resource
 - [x] add the correct fields (look at test)
 - [x] add the correct validations (look at test)
-- [ ] *extra* add compund index to ensure all tasks in a list have unique names
+- [x] *extra* add compund index to ensure all tasks in a list have unique names
 - [x] ensure all tests pass by running test command
 
 ### Controllers
