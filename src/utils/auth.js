@@ -8,13 +8,12 @@ export const newToken = user => {
   })
 }
 
-export const verifyToken = token =>
-  new Promise((resolve, reject) => {
-    jwt.verify(token, config.secrets.jwt, (err, payload) => {
-      if (err) return reject(err)
+export const verifyToken = token => new Promise((resolve, reject) => {
+  jwt.verify(token, config.secrets.jwt, (err, payload) => {
+    if (err) return reject(err)
       resolve(payload)
-    })
   })
+})
 
 export const signup = async (req, res) => {}
 
