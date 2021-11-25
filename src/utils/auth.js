@@ -15,7 +15,12 @@ export const verifyToken = token => new Promise((resolve, reject) => {
   })
 })
 
-export const signup = async (req, res) => {}
+export const signup = async (req, res) => {
+  // need to check if the input for email or password empty or not
+  if (!req.body.email || !req.body.password) {
+    return res.status(400).send({ message: 'Email and Password required' })
+  }
+}
 
 export const signin = async (req, res) => {}
 
