@@ -43,7 +43,8 @@ export const signin = async (req, res) => {
   }
 
   try {
-    const match = await User.checkPassword({ password: req.body.password })
+    const match = await user.checkPassword( req.body.password )
+
     if (!match) {
       return res.status(401).send({ message: 'Wrong Password' })
     }
