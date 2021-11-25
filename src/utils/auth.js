@@ -35,6 +35,13 @@ export const signin = async (req, res) => {
   if (!req.body.email || !req.body.password) {
     return res.status(400).send({ message: 'Email and Password required' })
   }
+
+  const user = await User.findOne({ email: req.body.email }).exec()
+
+  if (!user) {
+    return res.status(401).send({ message: 'User Not Found' })
+  }
+  }
 }
 
 export const protect = async (req, res, next) => {
