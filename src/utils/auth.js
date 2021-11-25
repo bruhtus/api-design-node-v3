@@ -41,6 +41,16 @@ export const signin = async (req, res) => {
   if (!user) {
     return res.status(401).send({ message: 'User Not Found' })
   }
+
+  try {
+    const match = await User.checkPassword({ password: req.body.password })
+    if (!match) {
+      return res.status(401).send({ message: 'Wrong Password' })
+    }
+
+  } catch (e) {
+    console.error(e)
+    return res.status(401).send({ message: 'Wrong Password' })
   }
 }
 
