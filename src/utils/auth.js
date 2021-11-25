@@ -20,6 +20,15 @@ export const signup = async (req, res) => {
   if (!req.body.email || !req.body.password) {
     return res.status(400).send({ message: 'Email and Password required' })
   }
+
+  try {
+    const user = await User.create(req.body)
+    const token = newToken(user)
+    return res.status(201).send({ token })
+  } catch (e) {
+    console.error(e)
+    return res.status(400).end()
+  }
 }
 
 export const signin = async (req, res) => {}
