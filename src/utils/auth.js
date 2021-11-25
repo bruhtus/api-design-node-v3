@@ -49,6 +49,9 @@ export const signin = async (req, res) => {
       return res.status(401).send({ message: 'Wrong Password' })
     }
 
+    const token = newToken(user)
+    return res.status(201).send({ token })
+
   } catch (e) {
     console.error(e)
     return res.status(401).send({ message: 'Wrong Password' })
