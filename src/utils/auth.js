@@ -62,4 +62,11 @@ export const protect = async (req, res, next) => {
   if (!req.headers.authorization) {
     return res.status(401).end()
   }
+
+  // if the token was correct, it should be somethjng like this ['', 'token']
+  let token = req.headers.authorization.split('Bearer ')[1]
+
+  if (!token) {
+    return res.status(401).end()
+  }
 }
